@@ -4,8 +4,8 @@ import java.util.Random;
 import javax.swing.*;
 
 public class WhacAMole {
-    int boardWidth = 600;
-    int boardHeight = 650;
+    public int boardWidth = 600;
+    public int boardHeight = 650;
 
     JFrame frame = new JFrame("KatKodes: Whack A Mole");
     JLabel textLabel = new JLabel();
