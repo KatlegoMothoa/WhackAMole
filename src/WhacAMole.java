@@ -10,6 +10,11 @@ public class WhacAMole {
     JFrame frame = new JFrame("KatKodes: Whack A Mole");
     JLabel textLabel = new JLabel();
     JPanel textPanel = new JPanel();
+    JPanel boardPanel = new JPanel();
+
+    JButton[] board = new JButton[9];
+    ImageIcon moleIcon;
+    ImageIcon plantIcon;
     
     WhacAMole(){
         frame.setVisible(true);
@@ -27,6 +32,20 @@ public class WhacAMole {
         textPanel.setLayout(new BorderLayout());
         textPanel.add(textLabel);
         frame.add(textPanel, BorderLayout.NORTH);
- 
+
+        boardPanel.setLayout(new GridLayout(3, 3));
+        //boardPanel.setBackground(Color.black);
+        frame.add(boardPanel);
+
+        Image plantImg = new ImageIcon(getClass().getResource("piranha.jpg")).getImage();
+        plantIcon = new ImageIcon(plantImg.getScaledInstance(150,150, java.awt.Image.SCALE_SMOOTH));
+        
+        for(int i = 0; i < 9; i++){
+            JButton tile = new JButton();
+            board[i] = tile;
+            boardPanel.add(tile);
+            tile.setIcon(plantIcon);
+
+        }
     }
 }
